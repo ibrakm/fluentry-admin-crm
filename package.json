@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "db:push": "drizzle-kit generate && drizzle-kit migrate",
-    "build:vercel": "vite build --config vite.config.vercel.ts"
+    "build:vercel": "vite build --config vite.config.vercel.ts && esbuild server/vercel-handler.ts --platform=node --packages=external --bundle --format=esm --outfile=api/_server.js"
   },
   "dependencies": {
     "@ai-sdk/openai": "^3.0.12",
